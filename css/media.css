@@ -1,0 +1,15 @@
+@media (max-width: 413px){
+	.nav-item{
+		font-size: 18px;
+	}
+	.nav-link{
+		font-size: 16px;
+		padding: 8px 14px;
+	}
+	.fa-star{
+		font-size: 10px;
+	}
+	.fa-list-ul{
+		font-size: 10px;
+	}
+}

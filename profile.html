@@ -1,0 +1,155 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Profile</title>
+    <style>
+    /* Style the tab */
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+    #favourite{
+      display: block;
+    }
+    .character {
+       display: flex;
+       justify-content: center;
+       border: 1px solid #ccc;
+    }
+
+    img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* remove extra space below image */
+}
+    .user_cards_greeting{
+      margin:auto;
+    }
+    .user_cards_img{
+      margin:20px;
+    }
+
+    .container{
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+    }
+
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/setting.css">
+	<link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <script>
+    function openTab(evt, tabName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    </script>
+  </head>
+
+  <body>
+    <div class="character">
+      <div class="user_cards_img">
+        <img src="images/user.png" alt="user image">
+      </div>
+      <div class="user_cards_greeting">
+        <h3>Good Afternoon,</h3>
+        <h3>Hibana</h3>
+      </div>
+    </div>
+
+    <div class="tab">
+      <button class="tablinks active" onclick="openTab(event, 'favourite')">Favourite</button>
+      <button class="tablinks" onclick="openTab(event, 'history')">History</button>
+      <button class="tablinks" onclick="openTab(event, 'cooklater')">Cook later</button>
+      <button class="tablinks" onclick="openTab(event, 'dietplanner')">Diet planner</button>
+    </div>
+
+  <!-- Tab content -->
+    <div id="favourite" class="tabcontent">
+      <h3>Favourite</h3>
+      <p>These are your favourite meals.</p>
+    </div>
+
+    <div id="history" class="tabcontent">
+      <h3>History</h3>
+      <p>This is your meal history.</p>
+    </div>
+
+    <div id="cooklater" class="tabcontent">
+      <h3>Cook later</h3>
+      <p>These are your unfinished meals.</p>
+    </div>
+
+    <div id="dietplanner" class="tabcontent">
+      <h3>Diet planner</h3>
+      <p>This is the diet plan we make for you today.</p>
+    </div>
+
+    <button class="item_button">
+      Log Out
+    </button>
+
+    <br><br><br><br>
+      <div class="container" style="position: fixed; bottom: 0; background-color: #fff;">
+        <div>
+            <ul class="nav nav-tabs" style="font-size: 18px;">
+                <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="home.html" style="color: rgb (0, 86, 179);"><i class="fa fa-star" style="margin: 10px; margin-left: 20px; font-size: 30px;"></i><br>Featured</a></li>
+                <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="menu.html" style="color: rgb (0, 86, 179);"><i class="fa fa-list-ul" style="margin: 10px; margin-left: 9px; font-size: 30px;"></i><br>Menu</a></li>
+                <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="search.html" style="color: rgb (0, 86, 179);"><i class="fa fa-search" style="margin: 10px; margin-left: 13px; font-size: 30px;"></i><br>Search</a></li>
+              <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="profile.html" style="color: rgb (0, 86, 179);"><i class="fa fa-user" style="margin: 10px; margin-left: 13px; font-size: 35px;"></i><br>Profile</a></li>
+            </ul>
+         
+        </div>
+    </div>
+      <script src="js/jquery.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+.item_button{
+    display: inline-block;
+    margin-top:20px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 3px;
+    background-color:  rgb(0, 86, 179);
+    -webkit-box-shadow: 0 2px 7px  rgb(0, 86, 179);
+    box-shadow: 0 2px 7px rgb(0, 86, 179);
+    font-weight: 700;
+    outline: 0;
+    cursor: pointer;
+}
+
+#toggle-button{ display: none; }
+.button-label{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    background-color: #ccc;
+    box-shadow: #ccc 0px 0px 0px 2px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.button-label .text {
+    line-height: 30px;
+    font-size: 18px;
+    text-shadow: 0 0 2px #ddd;
+    font-weight:bold;
+}
+
+.on { color: #fff; display: none; text-indent: 10px;}
+.off { color: #fff; display: inline-block; text-indent: 34px;}
+.button-label .circle{
+    left: 0;
+    transition: all 0.3s;
+}
+
+
+.toggle-button2{ display: none; }
+.toggle-button2:checked + label.button-label .circle{
+    left: 50px;
+}
+.toggle-button2:checked + label.button-label .on{ display: inline-block; }
+.toggle-button2:checked + label.button-label .off{ display: none; }
+.toggle-button2:checked + label.button-label{
+    background-color: rgb(0, 86, 179);
+}
+
+
+
+
+.toggle-button1{ display: none; }
+.toggle-button1:checked + label.button-label .circle{
+    left: 50px;
+}
+.toggle-button1:checked + label.button-label .on{ display: inline-block; }
+.toggle-button1:checked + label.button-label .off{ display: none; }
+.toggle-button1:checked + label.button-label{
+    background-color: rgb(0, 86, 179);
+}
+
+
+.toggle-button2{ display: none; }
+.toggle-button2:checked + label.button-label .circle{
+    left: 50px;
+}
+.toggle-button2:checked + label.button-label .on{ display: inline-block; }
+.toggle-button2:checked + label.button-label .off{ display: none; }
+.toggle-button2:checked + label.button-label{
+    background-color: rgb(0, 86, 179);
+}
+
+.toggle-button3{ display: none; }
+.toggle-button3:checked + label.button-label .circle{
+    left: 50px;
+}
+.toggle-button3:checked + label.button-label .on{ display: inline-block; }
+.toggle-button3:checked + label.button-label .off{ display: none; }
+.toggle-button3:checked + label.button-label{
+    background-color: rgb(0, 86, 179);
+}
+
+.toggle-button4{ display: none; }
+.toggle-button4:checked + label.button-label .circle{
+    left: 50px;
+}
+.toggle-button4:checked + label.button-label .on{ display: inline-block; }
+.toggle-button4:checked + label.button-label .off{ display: none; }
+.toggle-button4:checked + label.button-label{
+    background-color: rgb(0, 86, 179);
+}
+
+.toggle-button5{ display: none; }
+.toggle-button5:checked + label.button-label .circle{
+    left: 50px;
+}
+.toggle-button5:checked + label.button-label .on{ display: inline-block; }
+.toggle-button5:checked + label.button-label .off{ display: none; }
+.toggle-button5:checked + label.button-label{
+    background-color: rgb(0, 86, 179);
+}
