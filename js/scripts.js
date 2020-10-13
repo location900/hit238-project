@@ -51,6 +51,8 @@ $(function() {
   showSearch();
 } else if (href.indexOf('instructions.html') >= 0) {
   showInstructions();
+} else if (href.indexOf('step.html') >= 0) {
+  showStep();
 });
 
 // views
