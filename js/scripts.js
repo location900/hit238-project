@@ -49,6 +49,8 @@ $(function() {
     showHome();
 } else if (href.indexOf('search.html') >= 0) {
   showSearch();
+} else if (href.indexOf('instructions.html') >= 0) {
+  showInstructions();
 });
 
 // views
