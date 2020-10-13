@@ -162,6 +162,19 @@ function showStep() {
     `)
     return
   }
+  if (detail.type === 'video') {
+    $('#main').html(`
+      <div class="container" style="margin: 5%">
+        <iframe width= "90%" height="200px" src="${detail.url}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h1 class="text-center" style="margin: 10px 0px 0px 10px;">Step ${step + 1}</h1>
+      <p class="text-justify" style="font-size: 22px;margin: 10px 40px 10px 40px;"><br>${detail.desc}<br><br></p>
+      <div style="display: flex;justify-content: space-between;">
+      <a class="fa fa-long-arrow-left d-inline-flex justify-content-start align-items-end" href="step.html?id=${id}&step=${step - 1 < 0 ? 0 : step - 1}" style="margin: 50px 40px 40px 40px;font-size: 50px;color: rgb(16,118,190);"></a>
+      <a class="fa fa-long-arrow-right" href="step.html?id=${id}&step=${step + 1}" style="margin: 50px 40px 40px 180px;font-size: 50px;color: rgb(16,118,190);"></a>
+      </div>
+    `)
+  }
 }
 // tab
 function openTab(evt, tabName) {
