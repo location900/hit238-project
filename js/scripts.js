@@ -47,6 +47,8 @@ $(function() {
   const href = window.location.href;
   if (href.indexOf('home.html') >= 0) {
     showHome();
+} else if (href.indexOf('search.html') >= 0) {
+  showSearch();
 });
 
 // views
@@ -82,7 +84,20 @@ function showHome() {
   $('#cards').html(html)
 }
 
-
+function showSearch() {
+  $('#list').html('');
+  $('#searchButton').click(function() {
+    const value = $('#searchInput').val().trim().toLowerCase();
+    if (!value || value === '') {
+      return;
+    }
+    let html = '';
+    all.filter(el => el.title.toLowerCase().indexOf(value) >= 0).forEach(item => {
+      html += `<li class="list-group-item"><a href="instructions.html?id=${item.id}">${item.title}</a></li>`
+    })
+    $('#list').html(html);
+  })
+}
 
 // tab
 function openTab(evt, tabName) {
