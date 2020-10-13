@@ -119,6 +119,35 @@ function showInstructions() {
   `)
 }
 
+function showStep() {
+  const href = window.location.href;
+  const searchParams = new URLSearchParams(href.split('?')[1]);
+  const id = parseInt(searchParams.get("id"));
+  const step = parseInt(searchParams.get("step"));
+  const item = all.find(el => { return el.id === parseInt(id) });
+  if (step === item.steps.length) {
+    $('#main').html(`
+      <div class="container">
+      <img alt="finish" src="images/finish.jpg" style="max-width:100%">
+      </div>
+      <h1 class="text-center" style="margin: 10px 0px 0px 10px;">Cooking has finished!</h1>
+      <div class='d-flex justify-content-center'>
+        <button
+          type="button"
+          class="btn btn-primary navbar-btn"
+          style="position:absolute; bottom:40%; margin:auto; width: 60%;"
+          onClick="favorite(${id})"
+        >
+          Add to my favourite.
+        </button>
+      </div>
+      <br>
+      <a class="fa fa-long-arrow-left d-inline-flex justify-content-start align-items-end" href = "step.html?id=${id}&step=${step - 1 < 0 ? 0 : step - 1}" style="margin: 50px 40px 40px 40px;font-size: 50px;color: rgb(16,118,190); position:absolute; bottom:10px; left:0px;"></a>
+      <a class="fa fa-home" href="home.html" style="margin: 50px 40px 40px 180px;font-size: 50px;color: rgb(16,118,190); position:absolute; bottom:10px;right:0px;"></a>
+    `)
+    return
+  }
+}
 // tab
 function openTab(evt, tabName) {
   // Declare all variables
