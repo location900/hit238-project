@@ -99,6 +99,24 @@ function showSearch() {
   })
 }
 
+function showInstructions() {
+  const href = window.location.href;
+  const searchParams = new URLSearchParams(href.split('?')[1]);
+  const id = searchParams.get("id");
+  const item = all.find(el => { return el.id === parseInt(id) });
+  $('#main').html(`
+    <h1 class="text-center" style = "font-size: 3rem; margin-top: 30px;">${item.title}</h1>
+    <h4 class="text-center">${item.calories} Calories</h3>
+    <h4	class="text-center">Approx: ${item.time}</h3>
+    <h2 style="padding: 5px;margin: 20px; margin-bottom: 10px;">Ingredients</h2>
+    <p style="margin: 47px;">${item.ingredients}</p>
+    <div style="display: flex;justify-content: space-between;">
+    <a class="btn btn-primary" role="button" style="margin: 10px; margin-left: 50px;" href="home.html">Back to Home</a>
+    <a class="btn btn-primary" role="button" href="step.html?id=${id}&step=${0}" style="margin: 10px; margin-left: 50px;">Start Cooking!</a>
+    </div>
+  `)
+}
+
 // tab
 function openTab(evt, tabName) {
   // Declare all variables
