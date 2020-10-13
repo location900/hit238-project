@@ -22,7 +22,7 @@ const all = [
     ingredients: '2 cups torn mixed salad greens<br><br>1 plum tomato, cut into wedges<br><br>1/2 cup chopped sweet yellow pepper<br><br>2 tablespoons balsamic vinaigrette<br><br>2 tablespoons shredded Asiago cheese<br><br>',
     type: 'vegetarian',
     steps: [
-      { type: 'video', url: 'images/balsamic_salad.jpg', desc: 'Bring the steak to room temperature. Brush with a little oil. Sprinkle the crushed peppercorns on both sides of the steak, gently pressing the peppercorns onto the surface of the meat so they stick.', },
+      { type: 'image', url: 'images/balsamic_salad.jpg', desc: 'This is step 1.', },
       { type: 'image', url: 'images/balsamic_salad.jpg', desc: 'Heat a heavy based pan or BBQ to medium high. Place steak into the hot pan and cook for 2-3 minutes on each side until cooked to your liking. Do not turn the steak more than twice.' },
       { type: 'image', url: 'images/balsamic_salad.jpg', desc: 'Serve with whole potatoes with broccoli and carrots.' }
     ]
@@ -36,7 +36,7 @@ const all = [
     ingredients: '150 g chicken breast <br><br>500g water <br><br>salt to taste<br><br>',
     type: 'weight',
     steps: [
-      { type: 'video', url: 'images/chicken_breast.jpg', desc: 'Bring the steak to room temperature. Brush with a little oil. Sprinkle the crushed peppercorns on both sides of the steak, gently pressing the peppercorns onto the surface of the meat so they stick.', },
+      { type: 'image', url: 'images/chicken_breast.jpg', desc: 'Add water to a sause pan.', },
       { type: 'image', url: 'images/chicken_breast.jpg', desc: 'Heat a heavy based pan or BBQ to medium high. Place steak into the hot pan and cook for 2-3 minutes on each side until cooked to your liking. Do not turn the steak more than twice.' },
       { type: 'image', url: 'images/chicken_breast.jpg', desc: 'Serve with whole potatoes with broccoli and carrots.' }
     ]
