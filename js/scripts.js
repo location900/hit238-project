@@ -225,6 +225,15 @@ function showInstructions() {
   `)
 }
 
+function favorite(id) {
+  const favorites = getLocalStorage('favorite');
+  const flag = favorites.find(i => i === id);
+  if (flag) {
+    return
+  }
+  favorites.push(id)
+  saveLocalStorage('favorite', favorites)
+}
 
 function toggleFavorite(id) {
   const favorites = getLocalStorage('favorite');
