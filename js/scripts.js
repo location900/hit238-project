@@ -47,14 +47,16 @@ $(function() {
   const href = window.location.href;
   if (href.indexOf('home.html') >= 0) {
     showHome();
-} else if (href.indexOf('search.html') >= 0) {
-  showSearch();
-} else if (href.indexOf('instructions.html') >= 0) {
-  showInstructions();
-} else if (href.indexOf('step.html') >= 0) {
-  showStep();
+  } else if (href.indexOf('profile.html') >= 0) {
+    showProfile();
+  } else if (href.indexOf('search.html') >= 0) {
+    showSearch();
+  } else if (href.indexOf('step.html') >= 0) {
+    showStep();
+  } else if (href.indexOf('instructions.html') >= 0) {
+    showInstructions();
+  }
 });
-
 // views
 function showHome() {
   const favorites = getLocalStorage('favorite');
@@ -88,6 +90,35 @@ function showHome() {
   $('#cards').html(html)
 }
 
+function showProfile() {
+  const favorites = getLocalStorage('favorite');
+  const history = getLocalStorage('history');
+  let html = '<ul class="list-group" style="padding: 10px;">'
+  all.filter(el => favorites.find(i => i === el.id) >= 0)
+     .forEach(item => {
+       html += `
+       <li class="list-group-item">
+        <a href="instructions.html?id=${item.id}">${item.title}</a>
+       </li>
+       `
+     })
+  html += '</ul>'
+  $('#favorite').html(html);
+  html = '<ul class="list-group" style="padding: 10px;">'
+  history.forEach(id => {
+    const item = all.find(el => el.id === id);
+    if (item) {
+      html += `
+       <li class="list-group-item">
+        <a href="instructions.html?id=${item.id}">${item.title}</a>
+       </li>
+       `
+    }
+  })
+  html += '</ul>'
+  $('#history-wrap').html(html);
+}
+
 function showSearch() {
   $('#list').html('');
   $('#searchButton').click(function() {
@@ -101,24 +132,6 @@ function showSearch() {
     })
     $('#list').html(html);
   })
-}
-
-function showInstructions() {
-  const href = window.location.href;
-  const searchParams = new URLSearchParams(href.split('?')[1]);
-  const id = searchParams.get("id");
-  const item = all.find(el => { return el.id === parseInt(id) });
-  $('#main').html(`
-    <h1 class="text-center" style = "font-size: 3rem; margin-top: 30px;">${item.title}</h1>
-    <h4 class="text-center">${item.calories} Calories</h3>
-    <h4	class="text-center">Approx: ${item.time}</h3>
-    <h2 style="padding: 5px;margin: 20px; margin-bottom: 10px;">Ingredients</h2>
-    <p style="margin: 47px;">${item.ingredients}</p>
-    <div style="display: flex;justify-content: space-between;">
-    <a class="btn btn-primary" role="button" style="margin: 10px; margin-left: 50px;" href="home.html">Back to Home</a>
-    <a class="btn btn-primary" role="button" href="step.html?id=${id}&step=${0}" style="margin: 10px; margin-left: 50px;">Start Cooking!</a>
-    </div>
-  `)
 }
 
 function showStep() {
@@ -190,6 +203,56 @@ function showStep() {
     `)
   }
 }
+
+function showInstructions() {
+  const href = window.location.href;
+  const searchParams = new URLSearchParams(href.split('?')[1]);
+  const id = searchParams.get("id");
+  const item = all.find(el => { return el.id === parseInt(id) });
+  const history = getLocalStorage('history');
+  history.push(parseInt(id));
+  saveLocalStorage('history', history);
+  $('#main').html(`
+    <h1 class="text-center" style = "font-size: 3rem; margin-top: 30px;">${item.title}</h1>
+    <h4 class="text-center">${item.calories} Calories</h3>
+    <h4	class="text-center">Approx: ${item.time}</h3>
+    <h2 style="padding: 5px;margin: 20px; margin-bottom: 10px;">Ingredients</h2>
+    <p style="margin: 47px;">${item.ingredients}</p>
+    <div style="display: flex;justify-content: space-between;">
+    <a class="btn btn-primary" role="button" style="margin: 10px; margin-left: 50px;" href="home.html">Back to Home</a>
+    <a class="btn btn-primary" role="button" href="step.html?id=${id}&step=${0}" style="margin: 10px; margin-left: 50px;">Start Cooking!</a>
+    </div>
+  `)
+}
+
+
+function toggleFavorite(id) {
+  const favorites = getLocalStorage('favorite');
+  const flag = favorites.findIndex(i => i === id);
+  if (flag >= 0) {
+    favorites.splice(flag, 1);
+    saveLocalStorage('favorite', favorites)
+    showHome()
+    return
+  }
+  favorites.push(id)
+  saveLocalStorage('favorite', favorites)
+  showHome()
+}
+
+// localStorage utils
+function saveLocalStorage(key, value) {
+  window.localStorage.setItem(key, JSON.stringify(value));
+}
+
+function getLocalStorage(key) {
+  const temp = window.localStorage.getItem(key);
+  if (!temp) {
+    return []
+  }
+  return JSON.parse(temp)
+}
+
 // tab
 function openTab(evt, tabName) {
   // Declare all variables
