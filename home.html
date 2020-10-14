@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -10,53 +9,32 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
 </head>
-
 <body>
     <h1 style="margin: 28px;">Recommended Menu for YOU</h1>
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Pepper Steak</h4>
-            <h6 class="text-muted card-subtitle mb-2">250g - 679 Calories</h6>
-            <a href="instructions.html">
-				<img alt="Pepper Steak" src="images/Pepper-steaks.jpg" style="width: 97%">
-			</a>
-			</p>
-			<i class="fa fa-heart" style="font-size: 20px;color: rgb(255,0,0);margin: 5px;margin-right: 23px;"></i>
-			<i class="fa fa-thumbs-down" style="font-size: 20px;color: grey; margin: 5px;margin-right: 23px;"></i>
+    <div id="cards">
 
-			<a
-                class="card-link" href="#" style="font-size: 20px;">Share</a>
-        </div>
     </div>
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Pasta with Meatball</h4>
-            <h6 class="text-muted card-subtitle mb-2">100g - 131 Calories</h6>
-            <a href="instructions.html">
-				<img alt="Pasta" src="images/Pasta.jpg" style="width: 97%">
-			</a>
-			</p>
-			<i class="fa fa-heart" style="font-size: 20px;color: rgb(255,0,0);margin: 5px;margin-right: 23px;"></i>
-            <i class="fa fa-thumbs-down" style="font-size: 20px;color: grey; margin: 5px;margin-right: 23px;"></i>
-			<a
-                class="card-link" href="#" style="font-size: 20px;">Share</a>
-        </div>
+    <br><br><br><br>
+    <div style="position: fixed;display: flex; justify-content: center; bottom: 0; background-color: #fff;width: 100%;">
+        <ul class="nav nav-tabs" style="display: flex;justify-content:space-around;font-size: 15px;">
+            <li class="nav-item" style="text-align: center;">
+                <a class="nav-link active" href="home.html" style="color: rgb (0, 86, 179);">
+                    <i class="fa fa-star" style="font-size: 30px;"></i>
+                <br>Featured</a>
+            </li>
+            <li class="nav-item" style="text-align: center;">
+                <a class="nav-link" role="tab" data-toggle="tab" href="search.html" style="color: rgb (0, 86, 179);">
+                <i class="fa fa-search" style="font-size: 30px;"></i><br>Search</a>
+            </li>
+            <li class="nav-item" style="text-align: center;">
+                <a class="nav-link" role="tab" data-toggle="tab" href="profile.html" style="color: rgb (0, 86, 179);">
+                <i class="fa fa-user-o" style="font-size: 30px;"></i><br>Profile</a>
+            </li>
+            <li class="nav-item" style="text-align: center;">
+                <a class="nav-link" role="tab" data-toggle="tab" href="settings.html" style="color: rgb (0, 86, 179);">
+                <i class="fa fa-cogs" style="font-size: 30px;"></i><br>Settings</a>
+            </li>
+        </ul>
     </div>
-    <div class="card">
-    </div>
-
-	<br><br><br><br>
-    <div class="container" style="position: fixed; bottom: 0; background-color: #fff;">
-        <div>
-            <ul class="nav nav-tabs" style="font-size: 18px;">
-                <li class="nav-item"><a class="nav-link active" href="home.html" style="color: rgb (0, 86, 179);"><i class="fa fa-star" style="margin: 10px; margin-left: 20px; font-size: 30px;"></i><br>Featured</a></li>
-                <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="search.html" style="color: rgb (0, 86, 179);"><i class="fa fa-search" style="margin: 10px; margin-left: 9px; font-size: 30px;"></i><br>Search</a></li>
-                <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="profile.html" style="color: rgb (0, 86, 179);"><i class="fa fa-user-o" style="margin: 10px; margin-left: 13px; font-size: 30px;"></i><br>Profile</a></li>
-                <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="settings.html" style="color: rgb (0, 86, 179);"><i class="fa fa-cogs" style="margin: 10px; margin-left: 13px; font-size: 30px;"></i><br>Settings</a></li>
-            </ul>
-        </div>
-    </div>
-
 </body>
-
 </html>
