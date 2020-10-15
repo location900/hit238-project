@@ -6,7 +6,7 @@ const all = [
     image: 'images/Pepper-steaks.jpg',
     time: '30 minutes',
     ingredients: '2 tablespoons coarsely ground black pepper<br><br>50g steak, such as Scotch or eye fillet<br><br>salt to taste<br><br>oil for frying1/2 shallot, finely chopped<br><br>4 tablespoons beef stock<br><br>4 tablespoons double cream<br><br>50ml cognac or brandy<br><br>',
-    type: 'weight',
+    type: 'muscle',
     steps: [
       { type: 'video', url: 'https://www.youtube.com/embed/nsw0Px-Pho8', desc: 'Bring the steak to room temperature. Brush with a little oil. Sprinkle the crushed peppercorns on both sides of the steak, gently pressing the peppercorns onto the surface of the meat so they stick.', },
       { type: 'image', url: 'images/BBQ-Sauce.jpg', desc: 'Heat a heavy based pan or BBQ to medium high. Place steak into the hot pan and cook for 2-3 minutes on each side until cooked to your liking. Do not turn the steak more than twice.' },
@@ -22,7 +22,7 @@ const all = [
     ingredients: '2 cups torn mixed salad greens<br><br>1 plum tomato, cut into wedges<br><br>1/2 cup chopped sweet yellow pepper<br><br>2 tablespoons balsamic vinaigrette<br><br>2 tablespoons shredded Asiago cheese<br><br>',
     type: 'vegetarian',
     steps: [
-      { type: 'image', url: 'images/balsamic_salad.jpg', desc: 'This is step 1.', },
+      { type: 'video', url: 'images/balsamic_salad.jpg', desc: 'Bring the steak to room temperature. Brush with a little oil. Sprinkle the crushed peppercorns on both sides of the steak, gently pressing the peppercorns onto the surface of the meat so they stick.', },
       { type: 'image', url: 'images/balsamic_salad.jpg', desc: 'Heat a heavy based pan or BBQ to medium high. Place steak into the hot pan and cook for 2-3 minutes on each side until cooked to your liking. Do not turn the steak more than twice.' },
       { type: 'image', url: 'images/balsamic_salad.jpg', desc: 'Serve with whole potatoes with broccoli and carrots.' }
     ]
@@ -36,7 +36,7 @@ const all = [
     ingredients: '150 g chicken breast <br><br>500g water <br><br>salt to taste<br><br>',
     type: 'weight',
     steps: [
-      { type: 'image', url: 'images/chicken_breast.jpg', desc: 'Add water to a sause pan.', },
+      { type: 'video', url: 'images/chicken_breast.jpg', desc: 'Bring the steak to room temperature. Brush with a little oil. Sprinkle the crushed peppercorns on both sides of the steak, gently pressing the peppercorns onto the surface of the meat so they stick.', },
       { type: 'image', url: 'images/chicken_breast.jpg', desc: 'Heat a heavy based pan or BBQ to medium high. Place steak into the hot pan and cook for 2-3 minutes on each side until cooked to your liking. Do not turn the steak more than twice.' },
       { type: 'image', url: 'images/chicken_breast.jpg', desc: 'Serve with whole potatoes with broccoli and carrots.' }
     ]
@@ -51,12 +51,15 @@ $(function() {
     showProfile();
   } else if (href.indexOf('search.html') >= 0) {
     showSearch();
+  } else if (href.indexOf('settings.html') >= 0) {
+    showSettings();
   } else if (href.indexOf('step.html') >= 0) {
     showStep();
   } else if (href.indexOf('instructions.html') >= 0) {
     showInstructions();
   }
 });
+
 // views
 function showHome() {
   const favorites = getLocalStorage('favorite');
@@ -133,6 +136,7 @@ function showSearch() {
     $('#list').html(html);
   })
 }
+
 
 function showStep() {
   const href = window.location.href;
