@@ -137,6 +137,36 @@ function showSearch() {
   })
 }
 
+function showSettings() {
+  const button1 = getLocalStorage('toggle-button1');
+  const button2 = getLocalStorage('toggle-button2');
+  const button3 = getLocalStorage('toggle-button3');
+  $('#toggle-button1').attr('checked', button1.length > 0)
+  $('#toggle-button2').attr('checked', button2.length > 0)
+  $('#toggle-button3').attr('checked', button3.length > 0)
+
+  $('#toggle-button1').change(e => {
+    if (button1.length > 0) {
+      saveLocalStorage('toggle-button1', [])
+    } else {
+      saveLocalStorage('toggle-button1', [1])
+    }
+  });
+  $('#toggle-button2').change(e => {
+    if (button2.length > 0) {
+      saveLocalStorage('toggle-button2', [])
+    } else {
+      saveLocalStorage('toggle-button2', [1])
+    }
+  });
+  $('#toggle-button3').change(e => {
+    if (button3.length > 0) {
+      saveLocalStorage('toggle-button3', [])
+    } else {
+      saveLocalStorage('toggle-button3', [1])
+    }
+  });
+}
 
 function showStep() {
   const href = window.location.href;
